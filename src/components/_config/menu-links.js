@@ -1,17 +1,22 @@
 export const indexMenuLinks = [
   {
+    name: 'Albums',
+    link: '/#albums',
+    icon: 'terminal',
+  },
+  {
     name: 'About',
     link: '/#about',
     icon: 'user-tie',
   },
   {
-    name: 'Projects',
-    link: '/#projects',
-    icon: 'terminal',
+    name: 'Credits',
+    link: '/#credits',
+    icon: 'feather-alt',
   },
   {
-    name: 'Blog',
-    link: '/#blog',
+    name: 'Soundcloud',
+    link: '/#soundcloud',
     icon: 'feather-alt',
   },
   {

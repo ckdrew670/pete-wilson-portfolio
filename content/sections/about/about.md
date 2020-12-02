@@ -1,7 +1,7 @@
 ---
-title: 'The Gatsby starter that makes developer dreams come true!'
+title: 'Pete Wilson'
 about_image: './me.jpg'
-techs: ['Gatsby', 'Javascript', 'React', 'GraphQL', 'Emotion', 'Stylus']
+techs: []
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas sit amet arcu tincidunt fermentum. Mauris ac nisl nibh. Etiam nunc eros, blandit vel eros laoreet, accumsan lacinia turpis.
