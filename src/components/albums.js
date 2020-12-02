@@ -9,7 +9,7 @@ import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
 import { flexCenter } from './_shared/styled-mixins';
-import { StyledSection } from './_shared/styled-section';
+import StyledSkewedSection from './skewed-section';
 import { StyledTextSection } from './_shared/styled-text-section';
 
 const StyledPostsContainer = styled.article`
@@ -71,7 +71,7 @@ const StyledPostText = styled(StyledTextSection)`
   }
 `;
 
-const RecentPosts = ({ data }) => {
+const Albums = ({ data }) => {
   const recentPosts = data.map((post) => {
     const { title, tags, description, date } = post.node.frontmatter;
     const coverImage = post.node.frontmatter.cover_image
@@ -104,18 +104,18 @@ const RecentPosts = ({ data }) => {
   });
 
   return (
-    <StyledSection id="blog">
-      <StyledH1>Latest Blog Posts</StyledH1>
+    <StyledSkewedSection id="blog" angle={10}>
+      <StyledH1>Albums</StyledH1>
       <StyledPostsContainer>{recentPosts}</StyledPostsContainer>
       <StyledBlogLinkContainer>
-        <TextLink label="View All Posts" link="/blog" />
+        <TextLink label="View All Albums" link="/blog" />
       </StyledBlogLinkContainer>
-    </StyledSection>
+    </StyledSkewedSection>
   );
 };
 
-RecentPosts.propTypes = {
+Albums.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default RecentPosts;
+export default Albums;
