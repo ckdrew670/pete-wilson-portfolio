@@ -41,7 +41,7 @@ const SkewedSection = (props) => {
 
   return (
     <StyledSkewedSection>
-      <div className="content">{props.children}</div>
+      <div id={props.id} className="content">{props.children}</div>
     </StyledSkewedSection>
   );
 };

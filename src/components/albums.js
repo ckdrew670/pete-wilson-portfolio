@@ -104,7 +104,7 @@ const Albums = ({ data }) => {
   });
 
   return (
-    <StyledSkewedSection id="blog" angle={10}>
+    <StyledSkewedSection id="albums" angle={10}>
       <StyledH1>Albums</StyledH1>
       <StyledPostsContainer>{recentPosts}</StyledPostsContainer>
       <StyledBlogLinkContainer>
