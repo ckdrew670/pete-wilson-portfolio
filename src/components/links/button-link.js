@@ -13,7 +13,7 @@ export const StyledButtonLink = styled.a`
   white-space: nowrap;
   position: relative;
   border-bottom: 3px solid;
-  transition: all ease var(--transition-slow);
+  transition: all ease var(--transition-fast);
   padding: 0.6rem 1rem;
   margin: 0.4rem 0;
   z-index: 100;
@@ -22,20 +22,20 @@ export const StyledButtonLink = styled.a`
     color: var(--primary-color) !important;
     background-color: var(--bg-color) !important;
     border-bottom: 3px solid var(--primary-color);
-    transition: all ease var(--transition-slow);
+    transition: all ease var(--transition-fast);
   }
 
   & > svg {
     fill: var(--bg-content-color);
     height: 0.8rem;
     margin-left: 0.4rem;
-    transition: all ease var(--transition-slow);
+    transition: all ease var(--transition-fast);
   }
 
   &:hover > svg {
     fill: var(--primary-color);
     margin-left: 3rem;
-    transition: margin-left ease var(--transition-slow);
+    transition: margin-left ease var(--transition-fast);
   }
 `;
 
