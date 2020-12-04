@@ -9,6 +9,16 @@ import { StyledSection } from './_shared/styled-section';
 const StyledHeroSection = styled(StyledSection)`
   min-height: calc(100vh - 2 * var(--header-height));
   position: relative;
+  background: url(/images/hero-background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  padding-left: 12rem;
+
 
   ${mq.gt.sm} {
     min-height: calc(100vh - var(--header-height));
@@ -36,6 +46,7 @@ const StyledTagline = styled.h2`
   margin: 0;
   color: var(--primary-color);
   word-break: break-word;
+  background-color: var(--bg-color);
 
   ${mq.gt.xs} {
     font-size: 80px;

@@ -7,7 +7,7 @@ import Contact from '../components/contact';
 import FeaturedProjects from '../components/featured-projects';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
-import Albums from '../components/albums';
+import RecentPosts from '../components/recent-posts';
 import SEO from '../components/seo';
 import { indexMenuLinks } from '../components/_config/menu-links';
 
@@ -25,7 +25,7 @@ const Index = ({ data }) => {
     <Layout menuLinks={indexMenuLinks}>
       <SEO title="Home" />
       <Hero data={heroData} />
-      <Albums data={data.blog.edges} />
+      <RecentPosts data={data.blog.edges} />
       <About data={data.about} />
       <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Credits" id="credits" />
       <FeaturedProjects featured={data.featuredProjects.nodes} />

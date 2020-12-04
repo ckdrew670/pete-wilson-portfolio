@@ -1,6 +1,6 @@
 ---
 introduction: ""
-tagline: 'Composer. Musician. Multi-instrumentalist.'
+tagline: 'Composer. Musician.'
 cta_label: 'Listen'
 cta_link: '#about'
 ---

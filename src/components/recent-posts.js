@@ -71,7 +71,7 @@ const StyledPostText = styled(StyledTextSection)`
   }
 `;
 
-const Albums = ({ data }) => {
+const RecentPosts = ({ data }) => {
   const recentPosts = data.map((post) => {
     const { title, tags, description, date } = post.node.frontmatter;
     const coverImage = post.node.frontmatter.cover_image
@@ -104,18 +104,18 @@ const Albums = ({ data }) => {
   });
 
   return (
-    <StyledSkewedSection id="albums" angle={10}>
-      <StyledH1>Albums</StyledH1>
+    <StyledSkewedSection id="recent-posts" angle={10}>
+      <StyledH1>Recent Posts</StyledH1>
       <StyledPostsContainer>{recentPosts}</StyledPostsContainer>
       <StyledBlogLinkContainer>
-        <TextLink label="View All Albums" link="/blog" />
+        <TextLink label="View All Recent Posts" link="/blog" />
       </StyledBlogLinkContainer>
     </StyledSkewedSection>
   );
 };
 
-Albums.propTypes = {
+RecentPosts.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Albums;
+export default RecentPosts;
