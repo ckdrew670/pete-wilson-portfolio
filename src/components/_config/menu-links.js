@@ -10,11 +10,6 @@ export const indexMenuLinks = [
     icon: 'user-tie',
   },
   {
-    name: 'Credits',
-    link: '/#credits',
-    icon: 'feather-alt',
-  },
-  {
     name: 'Soundcloud',
     link: '/#soundcloud',
     icon: 'feather-alt',

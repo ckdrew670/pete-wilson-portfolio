@@ -64,7 +64,6 @@ const NavigationBar = ({ menuLinks }) => {
     <StyledNav>
       {menuLinks.map((link, index) => (
         <StyledNavLink key={link.name} to={link.link} activeClassName="active">
-          <Icon icon={link.icon} />
           <div>
             <StyledIndexNumber>{`${String(index + 1).padStart(2, '0')}.`}</StyledIndexNumber>
             {link.name}

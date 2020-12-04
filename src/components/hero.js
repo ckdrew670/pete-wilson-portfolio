@@ -17,11 +17,12 @@ const StyledHeroSection = styled(StyledSection)`
   margin: 0;
   max-width: 100%;
   width: 100%;
-  padding-left: 12rem;
-
-
+  align-items: center;
+  
   ${mq.gt.sm} {
-    min-height: calc(100vh - var(--header-height));
+    min-height: 100vh;
+    padding-left: 12rem;
+    align-items: flex-start;
   }
 `;
 const StyledIntroduction = styled.div`
