@@ -46,7 +46,6 @@ const StyledTagline = styled.h2`
   margin: 0;
   color: var(--primary-color);
   word-break: break-word;
-  background-color: var(--bg-color);
 
   ${mq.gt.xs} {
     font-size: 80px;

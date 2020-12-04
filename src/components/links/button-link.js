@@ -12,39 +12,30 @@ export const StyledButtonLink = styled.a`
   font-weight: 500;
   white-space: nowrap;
   position: relative;
-  border: none;
-  padding: 0.4rem 0.8rem;
+  border-bottom: 3px solid;
+  transition: all ease var(--transition-slow);
+  padding: 0.6rem 1rem;
+  margin: 0.4rem 0;
+  z-index: 100;
 
   &:hover {
     color: var(--primary-color) !important;
-  }
-
-  &:after {
-    content: '';
-    z-index: -1;
-    border: 1px solid var(--title-color);
-    position: absolute;
-    bottom: -3px;
-    right: -3px;
-    width: 100%;
-    height: 100%;
-    transition: all ease var(--transition-fast);
-  }
-
-  &:hover:after {
-    border: 1px solid var(--primary-color);
-    bottom: -5px;
-    right: -5px;
+    background-color: var(--bg-color) !important;
+    border-bottom: 3px solid var(--primary-color);
+    transition: all ease var(--transition-slow);
   }
 
   & > svg {
     fill: var(--bg-content-color);
     height: 0.8rem;
-    margin-left: 0.25rem;
+    margin-left: 0.4rem;
+    transition: all ease var(--transition-slow);
   }
 
   &:hover > svg {
     fill: var(--primary-color);
+    margin-left: 3rem;
+    transition: margin-left ease var(--transition-slow);
   }
 `;
 
