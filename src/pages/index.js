@@ -25,7 +25,7 @@ const Index = ({ data }) => {
     <Layout menuLinks={indexMenuLinks}>
       <SEO title="Home" />
       <Hero data={heroData} />
-      <Albums data={data.blog.edges} />
+      <Albums data={data.albums.edges} />
       <About data={data.about} />
       <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Credits" id="credits" />
       <FeaturedProjects featured={data.featuredProjects.nodes} />
@@ -119,9 +119,12 @@ export const query = graphql`
           node {
             frontmatter {
               title
-              tags
               date(formatString: "D MMMM, YYYY")
+              tags
               description
+              url
+              publisher
+              catalogue_number
               cover_image {
                 childImageSharp {
                   fluid(maxWidth: 800) {
@@ -137,34 +140,6 @@ export const query = graphql`
           }
         }
       }
-
-    blog: allMarkdownRemark(
-      sort: { order: DESC, fields: frontmatter___date }
-      limit: 4
-      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { published: { ne: false } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            tags
-            date(formatString: "D MMMM, YYYY")
-            description
-            cover_image {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          excerpt
-          fields {
-            slug
-          }
-        }
-      }
-    }
 
     contact: markdownRemark(fileAbsolutePath: { regex: "/content/sections/contact/" }) {
       frontmatter {
