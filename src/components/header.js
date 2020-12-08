@@ -13,9 +13,12 @@ const StyledHeader = styled.header`
   background-color: var(--bg-content-color);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-left);
-  position: fixed;
   width: 100vw;
   z-index: 1000;
+
+  ${mq.gt.sm} {
+    position: fixed;
+  }
 `;
 const StyledContainer = styled.div`
   display: flex;
