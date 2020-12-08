@@ -125,10 +125,13 @@ export const query = graphql`
               url
               publisher
               catalogue_number
+              collaboration
+              collaborator
               cover_image {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
+                  fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluidLimitPresentationSize
                   }
                 }
               }

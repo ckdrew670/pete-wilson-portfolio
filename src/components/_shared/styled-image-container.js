@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const StyledImageContainer = styled.div`
-  min-width: 300px;
-  min-height: 200px;
+  width: 18rem;
+  height: auto;
   position: relative;
 
   & .gatsby-image-wrapper * {
@@ -15,8 +15,8 @@ export const StyledImageContainer = styled.div`
 `;
 
 export const StyledStaticImageContainer = styled.div`
-  min-width: 300px;
-  min-height: 200px;
+  width: 18rem;
+  height: auto;
   position: relative;
 
   .gatsby-image-wrapper {

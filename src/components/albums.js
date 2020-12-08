@@ -63,6 +63,7 @@ const StyledBlogLinkContainer = styled.div`
   margin-top: 2.5rem;
 `;
 const StyledPostText = styled(StyledTextSection)`
+  padding-left: 0;
   > p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -70,15 +71,29 @@ const StyledPostText = styled(StyledTextSection)`
     overflow: hidden;
   }
 `;
+const StyledPostDetailsList = styled(StyledTextSection)`
+  padding-left: 0;
+  > p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    color: var(--primary-color);
+
+    span {
+        color: white;
+    }
+  }
+`;
 
 const Albums = ({ data }) => {
   const albums = data.map((post) => {
-    const { title, tags, description, date } = post.node.frontmatter;
+    const { title, tags, description, date, url, publisher, catalogue_number, collaboration, collaborator } = post.node.frontmatter;
     const coverImage = post.node.frontmatter.cover_image
       ? post.node.frontmatter.cover_image.childImageSharp.fluid
       : null;
 
-    const link = `/blog` + post.node.fields.slug;
+    const link = url;
 
     const month = new Date(date).toLocaleDateString('en-EN', { month: 'short' });
     const day = new Date(date).toLocaleDateString('en-EN', { day: '2-digit' });
@@ -99,6 +114,10 @@ const Albums = ({ data }) => {
         <StyledPostText>
           <p>{description}</p>
         </StyledPostText>
+        <StyledPostDetailsList>
+            <p><span>Publisher:</span> {publisher} ({catalogue_number})</p>
+            {collaboration ? <p><span>Composers:</span> Pete Wilson/{collaborator}</p> : null}
+        </StyledPostDetailsList>
       </StyledPostContainer>
     );
   });
