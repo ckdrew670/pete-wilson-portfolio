@@ -7,7 +7,7 @@ module.exports = {
     author: 'Pete Wilson',
     description: 'A portfolio site for the composer for film and media.',
     url: '',
-    paginationPageSize: 4, // Amount of posts displayed per listing page.
+    paginationPageSize: 6, // Amount of posts displayed per listing page.
   },
   plugins: [
     `gatsby-plugin-stylus`,
@@ -26,6 +26,13 @@ module.exports = {
         path: `${__dirname}/content/projects`,
       },
     },
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `albums`,
+          path: `${__dirname}/content/albums`,
+        },
+      },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

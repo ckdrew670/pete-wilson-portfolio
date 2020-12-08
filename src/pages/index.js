@@ -110,6 +110,34 @@ export const query = graphql`
       }
     }
 
+    albums: allMarkdownRemark(
+        sort: { order: DESC, fields: frontmatter___date }
+        limit: 6
+        filter: { fileAbsolutePath: { regex: "/content/albums/" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              tags
+              date(formatString: "D MMMM, YYYY")
+              description
+              cover_image {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            excerpt
+            fields {
+              slug
+            }
+          }
+        }
+      }
+
     blog: allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
       limit: 4

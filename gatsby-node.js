@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { published: { eq: true } } }
+          filter: { fileAbsolutePath: { regex: "/content/albums/" }, frontmatter: { published: { eq: true } } }
           limit: 2000
         ) {
           edges {
@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
 
         tagsGroup: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { published: { eq: true } } }
+          filter: { fileAbsolutePath: { regex: "/content/albums/" }, frontmatter: { published: { eq: true } } }
           limit: 2000
         ) {
           group(field: frontmatter___tags) {
