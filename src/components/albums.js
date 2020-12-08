@@ -79,6 +79,7 @@ const StyledPostDetailsList = styled(StyledTextSection)`
     -webkit-line-clamp: 4;
     overflow: hidden;
     color: var(--primary-color);
+    height: 50%;
 
     span {
         color: white;
