@@ -73,9 +73,7 @@ const PostCard = ({ title, date, description, link, coverImage, tags, publisher,
       <Link to={link}>
         <StyledCoverImageContainer>{coverImage && <Img fluid={coverImage} />}</StyledCoverImageContainer>
       </Link>
-      <StyledPostTags>
-        <TagList tags={tags} />
-      </StyledPostTags>
+      
       <StyledContent>
         <StyledTitle>{title}</StyledTitle>
         <StyledPublishingDate>Published by {publisher} ({catalogue_number}) on {date}.</StyledPublishingDate>
@@ -84,6 +82,9 @@ const PostCard = ({ title, date, description, link, coverImage, tags, publisher,
       <StyledListenLink to={link}>
         <span>Listen</span>
       </StyledListenLink>
+      <StyledPostTags>
+        <TagList tags={tags} />
+      </StyledPostTags>
     </StyledPostCard>
   );
 };

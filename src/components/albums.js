@@ -11,6 +11,7 @@ import { StyledImageContainer } from './_shared/styled-image-container';
 import { flexCenter } from './_shared/styled-mixins';
 import StyledSkewedSection from './skewed-section';
 import { StyledTextSection } from './_shared/styled-text-section';
+import SkewedSection from './skewed-section';
 
 const StyledAlbumsContainer = styled.article`
   display: grid;
@@ -52,7 +53,8 @@ const StyledDateOverlay = styled.div`
 `;
 const StyledTitleLink = styled(Link)`
   text-decoration: none;
-
+  margin-top: 1rem;
+  margin-bottom: -1rem;
   &:hover h2 {
     color: var(--primary-color);
   }
@@ -107,7 +109,6 @@ const Albums = ({ data }) => {
         <Link to={link} aria-label={`recent album ${title}`}>
           <StyledImageContainer>{coverImage && <Img fluid={coverImage} />}</StyledImageContainer>
         </Link>
-        <TagList tags={tags} />
         <StyledTitleLink to={link}>
           <StyledH2>{title}</StyledH2>
         </StyledTitleLink>
@@ -117,6 +118,7 @@ const Albums = ({ data }) => {
         <StyledAlbumDetailsList>
             <p><span>Publisher:</span> {publisher} ({catalogue_number})</p>
         </StyledAlbumDetailsList>
+        <TagList tags={tags} />
       </StyledAlbumContainer>
     );
   });
