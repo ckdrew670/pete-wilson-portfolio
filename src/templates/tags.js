@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { mq } from '../components/_shared/media';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
 import { albumMenuLinks } from '../components/_config/menu-links';
@@ -11,6 +12,14 @@ import { StyledFullHeightSection } from '../components/_shared/styled-section';
 
 const StyledTagsH1 = styled(StyledH1)`
   margin-top: 3rem;
+
+  ${mq.gt.sm} {
+    margin-top: 6rem;
+  }
+`;
+
+const StyledTagsH2 = styled(StyledH2)`
+  margin-bottom: 2rem;
 `;
 
 const Tags = ({ pageContext, data }) => {
@@ -22,7 +31,7 @@ const Tags = ({ pageContext, data }) => {
     <Layout menuLinks={albumMenuLinks}>
       <StyledFullHeightSection>
         <StyledTagsH1>{tag}</StyledTagsH1>
-        <StyledH2>{tagHeader}</StyledH2>
+        <StyledTagsH2>{tagHeader}</StyledTagsH2>
           {edges.map(({ node }) => {
             const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
             return (

@@ -57,7 +57,7 @@ const StyledPostCard = styled.article`
   color: var(--title-color);
   margin-bottom: var(--space);
   padding: 0;
-  min-width: 50vw;
+  min-width: 100%;
   padding-bottom: 1rem;
 
   > a {
