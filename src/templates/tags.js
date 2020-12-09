@@ -23,7 +23,6 @@ const Tags = ({ pageContext, data }) => {
       <StyledFullHeightSection>
         <StyledTagsH1>{tag}</StyledTagsH1>
         <StyledH2>{tagHeader}</StyledH2>
-        <ul>
           {edges.map(({ node }) => {
             const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
             return (
@@ -40,7 +39,6 @@ const Tags = ({ pageContext, data }) => {
                 />
             );
           })}
-        </ul>
       </StyledFullHeightSection>
     </Layout>
   );
