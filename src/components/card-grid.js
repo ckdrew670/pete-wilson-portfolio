@@ -4,7 +4,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { mq } from './_shared/media';
 import { StyledH1 } from './_shared/styled-headings';
-import { StyledSection } from './_shared/styled-section';
+import StyledSkewedSection from './skewed-section';
 import { StyledStaticImageContainer } from './_shared/styled-image-container';
 
 const StyledTextSection = styled.section`
@@ -58,11 +58,11 @@ const CardGrid = ({ cards, description, title, id = null }) => {
   });
   
   return (
-    <StyledSection id={id}>
+    <StyledSkewedSection id={id}>
       {title && <StyledH1>{title}</StyledH1>}
       <StyledTextSection dangerouslySetInnerHTML={{ __html: description }} />
       <StyledFeatureGridContainer>{featureCards}</StyledFeatureGridContainer>
-    </StyledSection>
+    </StyledSkewedSection>
   );
 };
 

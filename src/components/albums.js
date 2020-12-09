@@ -9,9 +9,12 @@ import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
 import { flexCenter } from './_shared/styled-mixins';
-import StyledSkewedSection from './skewed-section';
+import { StyledSection } from './_shared/styled-section';
 import { StyledTextSection } from './_shared/styled-text-section';
 
+const StyledAlbumH1 = styled(StyledH1)`
+    margin-top: 6rem;
+`;
 const StyledAlbumsContainer = styled.article`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -65,6 +68,7 @@ const StyledAlbumLinkContainer = styled.div`
 `;
 const StyledAlbumText = styled(StyledTextSection)`
   padding-left: 0;
+  background-color: inherit;
   > p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -74,6 +78,7 @@ const StyledAlbumText = styled(StyledTextSection)`
 `;
 const StyledAlbumDetailsList = styled(StyledTextSection)`
   padding-left: 0;
+  background-color: inherit;
   > p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -83,6 +88,7 @@ const StyledAlbumDetailsList = styled(StyledTextSection)`
     height: 80%;
     span {
         color: white;
+        background-color: inherit;
     }
   }
 `;
@@ -123,13 +129,13 @@ const Albums = ({ data }) => {
   });
 
   return (
-    <StyledSkewedSection id="albums" angle={10}>
-      <StyledH1>Albums</StyledH1>
+    <StyledSection id="albums" angle={10}>
+      <StyledAlbumH1>Albums</StyledAlbumH1>
       <StyledAlbumsContainer>{albums}</StyledAlbumsContainer>
       <StyledAlbumLinkContainer>
         <TextLink label="View All Albums" link="/albums" />
       </StyledAlbumLinkContainer>
-    </StyledSkewedSection>
+    </StyledSection>
   );
 };
 

@@ -19,6 +19,7 @@ const StyledHeroSection = styled(StyledSection)`
   width: 100%;
   align-items: center;
   text-align: center;
+
   ${mq.gt.xs} {
     min-height: 100vh;
     text-align: center;

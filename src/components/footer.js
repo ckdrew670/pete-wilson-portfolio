@@ -2,6 +2,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'gatsby';
 import SocialIcons from './social-icons';
 import { socialIconList } from './_config/social-icon-list';
 import { mq } from './_shared/media';
@@ -74,10 +75,7 @@ const Footer = ({ author }) => {
         <SocialIcons icons={socialIconList} />
       </StyledSocialContainer>
       <StyledRotator>
-        Made with
-        <span role="img" aria-label="heart emoji">
-          💖
-        </span>
+        <p style={{ marginBottom: 0 }}>Site built by Charlotte Drew using <Link to={`https://www.gatsbyjs.com/starters/Knochenmark/gatsby-starter-level-2`}>this Gatsby theme.</Link></p>
       </StyledRotator>
     </StyledFooter>
   );
