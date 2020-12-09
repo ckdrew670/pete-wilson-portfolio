@@ -19,6 +19,7 @@ const StyledPaginationContainer = styled.div`
     cursor: pointer;
     display: flex;
     list-style: none;
+    margin: 0;
 
     & > li {
       ${flexCenter};

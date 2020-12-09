@@ -102,7 +102,7 @@ export default TagsPage;
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { published: { eq: true } } }
+      filter: { fileAbsolutePath: { regex: "/content/albums/" } }
     ) {
       group(field: frontmatter___tags) {
         fieldValue

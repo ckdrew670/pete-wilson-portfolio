@@ -62,27 +62,27 @@ BlogPost.propTypes = {
 
 export default BlogPost;
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        tags
-        date(formatString: "D. MMMM YYYY")
-        cover_image {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-      fields {
-        readingTime {
-          text
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($slug: String!) {
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       html
+//       frontmatter {
+//         title
+//         tags
+//         date(formatString: "D. MMMM YYYY")
+//         cover_image {
+//           childImageSharp {
+//             fluid(maxWidth: 800) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//       fields {
+//         readingTime {
+//           text
+//         }
+//       }
+//     }
+//   }
+// `;
