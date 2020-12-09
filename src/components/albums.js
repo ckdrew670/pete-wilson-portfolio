@@ -11,7 +11,6 @@ import { StyledImageContainer } from './_shared/styled-image-container';
 import { flexCenter } from './_shared/styled-mixins';
 import StyledSkewedSection from './skewed-section';
 import { StyledTextSection } from './_shared/styled-text-section';
-import SkewedSection from './skewed-section';
 
 const StyledAlbumsContainer = styled.article`
   display: grid;

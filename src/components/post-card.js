@@ -63,6 +63,10 @@ const StyledPostCard = styled.article`
   > a {
     text-decoration: none;
   }
+
+  &:first-of-type {
+      margin-top: 2rem;
+  }
 `;
 
 const PostCard = ({ title, date, description, link, coverImage, tags, publisher, catalogue_number }) => {

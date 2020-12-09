@@ -19,7 +19,7 @@ const StyledTagsH1 = styled(StyledH1)`
 `;
 
 const StyledTagsH2 = styled(StyledH2)`
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 `;
 
 const Tags = ({ pageContext, data }) => {
