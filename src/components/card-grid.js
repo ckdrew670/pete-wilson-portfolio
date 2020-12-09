@@ -18,38 +18,26 @@ const StyledFeatureGridContainer = styled.section`
   width: 100%;
 
   ${mq.gt.xs} {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  ${mq.gt.sm} {
     grid-template-columns: repeat(3, 1fr);
+  }
+  ${mq.gt.md} {
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 const StyledFeatureCard = styled.article`
-  border: 1px solid var(--body-color);
-  border-radius: var(--radius);
 
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 200px;
-  padding: 1rem;
-
-  & svg {
-    height: 2rem;
-    width: 2rem;
-    font-size: 2rem;
-  }
+  width: 100%;
 `;
 const StyledCardLabel = styled.h2`
   font-size: 1.5rem;
   margin: 1rem 0;
   color: var(--body-color);
 `;
-const StyledDivider = styled.div`
-  width: 15%;
-  height: 2px;
-  background-color: var(--primary-color);
-  margin-bottom: 1rem;
+const StyledCardStaticImageContainer = styled(StyledStaticImageContainer)`
+  width: 10rem;
 `;
 const StyledFeatureDescription = styled.p`
   font-size: 0.8rem;
@@ -62,16 +50,13 @@ const CardGrid = ({ cards, description, title, id = null }) => {
     const image = card_image ? card_image.childImageSharp.fluid : null;
     return (
       <StyledFeatureCard key={index}>
-        <StyledCardLabel>{label}</StyledCardLabel>
-        <StyledStaticImageContainer>
-            <Img fluid={image} objectFit="contain" />
-          </StyledStaticImageContainer>
-        <StyledDivider></StyledDivider>
-        <StyledFeatureDescription>{description}</StyledFeatureDescription>
+        <StyledCardStaticImageContainer>
+          <Img fluid={image} objectFit="contain" />
+        </StyledCardStaticImageContainer>
       </StyledFeatureCard>
     );
   });
-
+  
   return (
     <StyledSection id={id}>
       {title && <StyledH1>{title}</StyledH1>}

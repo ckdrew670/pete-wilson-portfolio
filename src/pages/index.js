@@ -20,14 +20,14 @@ const Index = ({ data }) => {
     ctaLabel: data.hero.frontmatter.cta_label,
     ctaLink: data.hero.frontmatter.cta_link,
   };
- console.log(data.cards.nodes)
+
   return (
     <Layout menuLinks={indexMenuLinks}>
       <SEO title="Home" />
       <Hero data={heroData} />
       <Albums data={data.albums.edges} />
       <About data={data.about} />
-      <CardGrid cards={data.cards.nodes[0].frontmatter.cards} description={data.cards.nodes.html} title="Credits" id="credits" />
+      <CardGrid cards={data.cards.nodes[0].frontmatter.cards} description={data.cards.nodes[0].html} title="Credits" id="credits" />
       
       <Contact data={data.contact} />
     </Layout>
@@ -83,7 +83,7 @@ export const query = graphql`
               label
               card_image {
                 childImageSharp {
-                  fluid(maxWidth: 200) {
+                  fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
                   }
                 }
