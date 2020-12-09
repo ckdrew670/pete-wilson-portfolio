@@ -20,15 +20,14 @@ const Index = ({ data }) => {
     ctaLabel: data.hero.frontmatter.cta_label,
     ctaLink: data.hero.frontmatter.cta_link,
   };
-
+ console.log(data.cards.nodes)
   return (
     <Layout menuLinks={indexMenuLinks}>
       <SEO title="Home" />
       <Hero data={heroData} />
       <Albums data={data.albums.edges} />
       <About data={data.about} />
-      <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Credits" id="credits" />
-      <FeaturedProjects featured={data.featuredProjects.nodes} />
+      <CardGrid cards={data.cards.nodes} description={data.cards.nodes.html} title="Credits" id="credits" />
       
       <Contact data={data.contact} />
     </Layout>
@@ -74,37 +73,22 @@ export const query = graphql`
       html
     }
 
-    cards: markdownRemark(fileAbsolutePath: { regex: "/content/sections/cards/" }) {
-      frontmatter {
-        cards {
-          label
-          icon
-          prefix
-          description
-        }
-      }
-      html
-    }
-
-    featuredProjects: allMarkdownRemark(
-      limit: 3
-      sort: { order: DESC, fields: frontmatter___date }
-      filter: { fileAbsolutePath: { regex: "/content/projects/" }, frontmatter: { featured: { eq: true } } }
+    cards: allMarkdownRemark(
+      limit: 6
+      filter: { fileAbsolutePath: { regex: "/content/cards/" } }
     ) {
       nodes {
         frontmatter {
-          date(formatString: "D MMMM, YYYY")
-          title
-          repo_link
-          demo_link
-          techs
-          cover_image {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
+            cards {
+              label
+              card_image {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
-          }
         }
         html
       }

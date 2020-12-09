@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Icon from './icon';
 import { mq } from './_shared/media';
 import { StyledH1 } from './_shared/styled-headings';
 import { StyledSection } from './_shared/styled-section';
@@ -50,18 +49,14 @@ const StyledDivider = styled.div`
   background-color: var(--primary-color);
   margin-bottom: 1rem;
 `;
-const StyledFeatureDescription = styled.p`
-  font-size: 0.8rem;
-`;
 
 const CardGrid = ({ cards, description, title, id = null }) => {
-  const featureCards = cards.map(({ icon, prefix, label, description }, index) => {
+  const featureCards = cards.map(({ card_image, label }, index) => {
     return (
       <StyledFeatureCard key={index}>
-        <Icon icon={icon} prefix={prefix} />
+        {card_image}
         <StyledCardLabel>{label}</StyledCardLabel>
         <StyledDivider></StyledDivider>
-        <StyledFeatureDescription>{description}</StyledFeatureDescription>
       </StyledFeatureCard>
     );
   });
@@ -77,8 +72,6 @@ const CardGrid = ({ cards, description, title, id = null }) => {
 
 CardGrid.propTypes = {
   cards: PropTypes.array.isRequired,
-  description: PropTypes.string.isRequired,
-  id: PropTypes.string,
   title: PropTypes.string,
 };
 
