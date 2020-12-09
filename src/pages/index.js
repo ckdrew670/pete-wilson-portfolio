@@ -27,7 +27,7 @@ const Index = ({ data }) => {
       <Hero data={heroData} />
       <Albums data={data.albums.edges} />
       <About data={data.about} />
-      <CardGrid cards={data.cards.nodes} description={data.cards.nodes.html} title="Credits" id="credits" />
+      <CardGrid cards={data.cards.nodes[0].frontmatter.cards} description={data.cards.nodes.html} title="Credits" id="credits" />
       
       <Contact data={data.contact} />
     </Layout>
@@ -83,7 +83,7 @@ export const query = graphql`
               label
               card_image {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
+                  fluid(maxWidth: 200) {
                     ...GatsbyImageSharpFluid
                   }
                 }
