@@ -79,7 +79,9 @@ const PostCard = ({ title, date, description, link, coverImage, tags, publisher,
       </Link>
       
       <StyledContent>
-        <StyledTitle>{title}</StyledTitle>
+        <Link to={link}>
+            <StyledTitle>{title}</StyledTitle>
+        </Link>
         <StyledPublishingDate>Published by {publisher} ({catalogue_number}) on {date}.</StyledPublishingDate>
         <StyledDescription>{description}</StyledDescription>
       </StyledContent>
