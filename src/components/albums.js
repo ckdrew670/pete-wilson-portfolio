@@ -12,7 +12,7 @@ import { flexCenter } from './_shared/styled-mixins';
 import StyledSkewedSection from './skewed-section';
 import { StyledTextSection } from './_shared/styled-text-section';
 
-const StyledPostsContainer = styled.article`
+const StyledAlbumsContainer = styled.article`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 2.5rem;
@@ -22,14 +22,14 @@ const StyledPostsContainer = styled.article`
     grid-template-columns: repeat(2, 1fr);
   }
 `;
-const StyledPostContainer = styled.article`
+const StyledAlbumContainer = styled.article`
   position: relative;
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
 
   & .gatsby-image-wrapper {
-    max-height: 300px;
+    max-height: 400px;
   }
 `;
 const StyledDateOverlay = styled.div`
@@ -57,12 +57,12 @@ const StyledTitleLink = styled(Link)`
     color: var(--primary-color);
   }
 `;
-const StyledBlogLinkContainer = styled.div`
+const StyledAlbumLinkContainer = styled.div`
   ${flexCenter};
   width: 100%;
   margin-top: 2.5rem;
 `;
-const StyledPostText = styled(StyledTextSection)`
+const StyledAlbumText = styled(StyledTextSection)`
   padding-left: 0;
   > p {
     display: -webkit-box;
@@ -71,7 +71,7 @@ const StyledPostText = styled(StyledTextSection)`
     overflow: hidden;
   }
 `;
-const StyledPostDetailsList = styled(StyledTextSection)`
+const StyledAlbumDetailsList = styled(StyledTextSection)`
   padding-left: 0;
   > p {
     display: -webkit-box;
@@ -79,8 +79,7 @@ const StyledPostDetailsList = styled(StyledTextSection)`
     -webkit-line-clamp: 4;
     overflow: hidden;
     color: var(--primary-color);
-    height: 50%;
-
+    height: 80%;
     span {
         color: white;
     }
@@ -88,10 +87,10 @@ const StyledPostDetailsList = styled(StyledTextSection)`
 `;
 
 const Albums = ({ data }) => {
-  const albums = data.map((post) => {
-    const { title, tags, description, date, url, publisher, catalogue_number, collaboration, collaborator } = post.node.frontmatter;
-    const coverImage = post.node.frontmatter.cover_image
-      ? post.node.frontmatter.cover_image.childImageSharp.fluid
+  const albums = data.map((album) => {
+    const { title, tags, description, date, url, publisher, catalogue_number } = album.node.frontmatter;
+    const coverImage = album.node.frontmatter.cover_image
+      ? album.node.frontmatter.cover_image.childImageSharp.fluid
       : null;
 
     const link = url;
@@ -100,36 +99,35 @@ const Albums = ({ data }) => {
     const day = new Date(date).toLocaleDateString('en-EN', { day: '2-digit' });
 
     return (
-      <StyledPostContainer key={title}>
+      <StyledAlbumContainer key={title}>
         <StyledDateOverlay>
           <span>{month}</span>
           <span>{day}</span>
         </StyledDateOverlay>
-        <Link to={link} aria-label={`recent post ${title}`}>
+        <Link to={link} aria-label={`recent album ${title}`}>
           <StyledImageContainer>{coverImage && <Img fluid={coverImage} />}</StyledImageContainer>
         </Link>
         <TagList tags={tags} />
         <StyledTitleLink to={link}>
           <StyledH2>{title}</StyledH2>
         </StyledTitleLink>
-        <StyledPostText>
+        <StyledAlbumText>
           <p>{description}</p>
-        </StyledPostText>
-        <StyledPostDetailsList>
+        </StyledAlbumText>
+        <StyledAlbumDetailsList>
             <p><span>Publisher:</span> {publisher} ({catalogue_number})</p>
-            {collaboration ? <p><span>Composers:</span> Pete Wilson/{collaborator}</p> : null}
-        </StyledPostDetailsList>
-      </StyledPostContainer>
+        </StyledAlbumDetailsList>
+      </StyledAlbumContainer>
     );
   });
 
   return (
     <StyledSkewedSection id="albums" angle={10}>
       <StyledH1>Albums</StyledH1>
-      <StyledPostsContainer>{albums}</StyledPostsContainer>
-      <StyledBlogLinkContainer>
-        <TextLink label="View All Albums" link="/blog" />
-      </StyledBlogLinkContainer>
+      <StyledAlbumsContainer>{albums}</StyledAlbumsContainer>
+      <StyledAlbumLinkContainer>
+        <TextLink label="View All Albums" link="/album" />
+      </StyledAlbumLinkContainer>
     </StyledSkewedSection>
   );
 };

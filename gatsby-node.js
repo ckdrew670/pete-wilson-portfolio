@@ -46,17 +46,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // console.log('NODE', result.data.allMarkdownRemark.edges);
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: `blog${node.fields.slug}`,
-      component: path.resolve(`./src/templates/blog-post.js`),
-      context: {
-        // Data passed to context is available in page queries as GraphQL vars.
-        // (when we query data it will set $slug var auto)
-        slug: node.fields.slug,
-      },
-    });
-  });
+//   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+//     createPage({
+//       path: `album${node.fields.slug}`,
+//       component: path.resolve(`./src/templates/blog-post.js`),
+//       context: {
+//         // Data passed to context is available in page queries as GraphQL vars.
+//         // (when we query data it will set $slug var auto)
+//         slug: node.fields.slug,
+//       },
+//     });
+//   });
 
   const tags = result.data.tagsGroup.group;
   const tagTemplate = path.resolve('src/templates/tags.js');

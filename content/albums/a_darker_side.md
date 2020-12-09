@@ -8,6 +8,4 @@ cover_image: ./images/standard_mute.jpg
 description: 'Warm, contemporary, narrative, piano-led cues for drama, documentary, human interest and reality programming'
 publisher: 'EMI Production Music/Sony'
 catalogue_number: 'PMY78'
-collaboration: false
-collaborator: 'none'
 ---

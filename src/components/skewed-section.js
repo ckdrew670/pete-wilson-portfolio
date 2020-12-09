@@ -4,7 +4,7 @@ import React from 'react';
 
 const skewNumber = 0.09719;
 const StyledSkewedSection = styled.section`
-  margin: 6rem 0;
+  margin: 4rem 0;
   position: relative;
   padding: calc(100% * ${skewNumber}) 0;
 

@@ -8,6 +8,4 @@ cover_image: ./images/a_darker_side.jpg
 description: 'Emotional, evocative and contemplative. Dark drama with a hint of hope.'
 publisher: 'Twisted Jukebox'
 catalogue_number: 'TJ0149'
-collaboration: false
-collaborator: 'none'
 ---
