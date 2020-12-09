@@ -13,19 +13,14 @@ const StyledPostTags = styled.div`
   position: relative;
   z-index: 2;
 `;
-const StyledReadMoreLink = styled(Link)`
+const StyledListenLink = styled(Link)`
   color: var(--primary-color);
   background: transparent;
   display: flex;
   align-items: flex-end;
   flex-grow: 1;
   padding: 0 var(--space) var(--space);
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 0;
+  position: relative;
 
   &:hover {
     color: var(--primary-color) !important;
@@ -62,15 +57,16 @@ const StyledPostCard = styled.article`
   color: var(--title-color);
   margin-bottom: var(--space);
   padding: 0;
-  padding-bottom: calc(3rem * 2);
+  min-width: 50vw;
+  padding-bottom: 1rem;
 
   > a {
     text-decoration: none;
   }
 `;
 
-const PostCard = ({ title, date, description, link, coverImage, tags }) => {
-  // const tagsList = tags.map(tag => <PostTag key={tag} tag={tag} />);
+const PostCard = ({ title, date, description, link, coverImage, tags, publisher, catalogue_number }) => {
+//   const tagsList = tags.map(tag => <PostTag key={tag} tag={tag} />);
 
   return (
     <StyledPostCard>
@@ -80,16 +76,14 @@ const PostCard = ({ title, date, description, link, coverImage, tags }) => {
       <StyledPostTags>
         <TagList tags={tags} />
       </StyledPostTags>
-      <Link to={link}>
-        <StyledContent>
-          <StyledTitle>{title}</StyledTitle>
-          <StyledPublishingDate>published on {date}</StyledPublishingDate>
-          <StyledDescription>{description}</StyledDescription>
-        </StyledContent>
-      </Link>
-      <StyledReadMoreLink to={link}>
-        <span>Read more</span>
-      </StyledReadMoreLink>
+      <StyledContent>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledPublishingDate>Published by {publisher} ({catalogue_number}) on {date}.</StyledPublishingDate>
+        <StyledDescription>{description}</StyledDescription>
+      </StyledContent>
+      <StyledListenLink to={link}>
+        <span>Listen</span>
+      </StyledListenLink>
     </StyledPostCard>
   );
 };

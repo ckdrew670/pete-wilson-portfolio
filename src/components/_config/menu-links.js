@@ -21,20 +21,15 @@ export const indexMenuLinks = [
   },
 ];
 
-export const blogMenuLinks = [
+export const albumMenuLinks = [
   {
-    name: 'Portfolio',
+    name: 'Home',
     link: '/',
     icon: 'code',
   },
   {
-    name: 'Blog',
-    link: '/blog',
+    name: 'Albums',
+    link: '/albums',
     icon: 'feather-alt',
-  },
-  {
-    name: 'Tags',
-    link: '/tags',
-    icon: 'tags',
-  },
+  }
 ];

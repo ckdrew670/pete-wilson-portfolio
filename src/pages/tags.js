@@ -5,7 +5,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import TextLink from '../components/links/text-link';
 import SEO from '../components/seo';
-import { blogMenuLinks } from '../components/_config/menu-links';
+import { albumMenuLinks } from '../components/_config/menu-links';
 import { StyledH1 } from '../components/_shared/styled-headings';
 import { flexWrap } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
@@ -67,7 +67,7 @@ const TagsPage = ({
   });
 
   return (
-    <Layout menuLinks={blogMenuLinks}>
+    <Layout menuLinks={albumMenuLinks}>
       <SEO title="Tags" />
       <StyledFullHeightSection>
         <StyledTagsH1>Tags ({tagCount})</StyledTagsH1>

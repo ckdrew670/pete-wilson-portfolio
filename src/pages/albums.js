@@ -6,7 +6,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
 import SEO from '../components/seo';
-import { blogMenuLinks } from '../components/_config/menu-links';
+import { albumMenuLinks } from '../components/_config/menu-links';
 import { flexCenter } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
 
@@ -36,7 +36,7 @@ const StyledPaginationContainer = styled.div`
     }
   }
 `;
-const Blog = ({ data }) => {
+const Albums = ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
 
   const onPaginationChange = (page) => {
@@ -48,8 +48,8 @@ const Blog = ({ data }) => {
   let rightCursor = leftCursor + paginationSize;
 
   return (
-    <Layout menuLinks={blogMenuLinks}>
-      <SEO title="Blog" />
+    <Layout menuLinks={albumMenuLinks}>
+      <SEO title="albums" />
       <StyledFullHeightSection>
         {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
@@ -60,8 +60,10 @@ const Blog = ({ data }) => {
               title={node.frontmatter.title}
               date={node.frontmatter.date}
               description={node.frontmatter.description}
-              link={`/blog${node.fields.slug}`}
+              link={node.frontmatter.url}
               tags={node.frontmatter.tags}
+              publisher={node.frontmatter.publisher}
+              catalogue_number={node.frontmatter.catalogue_number}
             />
           );
         })}
@@ -78,17 +80,17 @@ const Blog = ({ data }) => {
   );
 };
 
-Blog.propTypes = {
+Albums.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default Blog;
+export default Albums;
 
 export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
-      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { published: { ne: false } } }
+      filter: { fileAbsolutePath: { regex: "/content/albums/" } }
     ) {
       edges {
         node {
@@ -97,6 +99,9 @@ export const query = graphql`
             tags
             date(formatString: "D MMMM, YYYY")
             description
+            url
+            publisher
+            catalogue_number
             cover_image {
               childImageSharp {
                 fluid(maxWidth: 800) {

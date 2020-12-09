@@ -126,7 +126,7 @@ const Albums = ({ data }) => {
       <StyledH1>Albums</StyledH1>
       <StyledAlbumsContainer>{albums}</StyledAlbumsContainer>
       <StyledAlbumLinkContainer>
-        <TextLink label="View All Albums" link="/album" />
+        <TextLink label="View All Albums" link="/albums" />
       </StyledAlbumLinkContainer>
     </StyledSkewedSection>
   );

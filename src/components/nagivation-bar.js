@@ -19,6 +19,7 @@ const StyledNav = styled.nav`
   left: 0;
   right: 0;
   height: var(--header-height);
+  z-index: 1000;
 
   ${mq.gt.sm} {
     display: none;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
 import TagList from '../components/tag-list';
-import { blogMenuLinks } from '../components/_config/menu-links';
+import { albumMenuLinks } from '../components/_config/menu-links';
 import { StyledH1 } from '../components/_shared/styled-headings';
 import { StyledSection } from '../components/_shared/styled-section';
 
@@ -42,7 +42,7 @@ const BlogPost = ({ data }) => {
   const { tags = [], title, date } = post.frontmatter;
 
   return (
-    <Layout menuLinks={blogMenuLinks}>
+    <Layout menuLinks={albumMenuLinks}>
       <StyledBlogSection>
         <StyledBlogTitle>{title}</StyledBlogTitle>
         <StyledDate>

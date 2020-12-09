@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
 import TextLink from '../components/links/text-link';
-import { blogMenuLinks } from '../components/_config/menu-links';
+import { albumMenuLinks } from '../components/_config/menu-links';
 import { StyledH1, StyledH2 } from '../components/_shared/styled-headings';
 import { flexCenter } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
@@ -24,7 +24,7 @@ const Tags = ({ pageContext, data }) => {
   const tagHeader = `A collection of ${totalCount} post${totalCount === 1 ? '' : 's'}`;
 
   return (
-    <Layout menuLinks={blogMenuLinks}>
+    <Layout menuLinks={albumMenuLinks}>
       <StyledFullHeightSection>
         <StyledTagsH1>{tag}</StyledTagsH1>
         <StyledTagsLinkContainer>
