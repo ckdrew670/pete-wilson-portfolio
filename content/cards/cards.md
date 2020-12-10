@@ -14,4 +14,3 @@ cards:
     card_image: './channel4.png'
 ---
 
-My work has been featured in programmes created by the following broadcasters.
