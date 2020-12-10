@@ -39,8 +39,8 @@ const StyledCardLabel = styled.h2`
 const StyledCardStaticImageContainer = styled(StyledStaticImageContainer)`
   width: 10rem;
 `;
-const StyledFeatureDescription = styled.p`
-  font-size: 0.8rem;
+const StyledCreditsH1 = styled(StyledH1)`
+  margin-top: 2rem;
 `;
 
 const CardGrid = ({ cards, description, title, id = null }) => {
@@ -59,7 +59,7 @@ const CardGrid = ({ cards, description, title, id = null }) => {
   
   return (
     <StyledSkewedSection id={id}>
-      {title && <StyledH1>{title}</StyledH1>}
+      {title && <StyledCreditsH1>{title}</StyledCreditsH1>}
       <StyledTextSection dangerouslySetInnerHTML={{ __html: description }} />
       <StyledFeatureGridContainer>{featureCards}</StyledFeatureGridContainer>
     </StyledSkewedSection>

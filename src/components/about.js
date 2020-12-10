@@ -19,6 +19,9 @@ const StyledAboutContainer = styled.article`
 const StyledTextSection = styled.section`
   white-space: pre-line;
 `;
+const StyledAboutH1 = styled(StyledH1)`
+  margin-top: 2rem;
+`;
 
 const About = ({ data }) => {
   const {
@@ -30,7 +33,7 @@ const About = ({ data }) => {
 
   return (
     <StyledSection id="about">
-      <StyledH1>About Me</StyledH1>
+      <StyledAboutH1>About Me</StyledAboutH1>
       <StyledAboutContainer>
         {image && (
           <StyledStaticImageContainer>

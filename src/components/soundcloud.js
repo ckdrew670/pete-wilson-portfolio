@@ -43,6 +43,9 @@ const StyledSoundcloudLinkContainer = styled.div`
 `;
 const StyledIFrameContainer = styled.div`
 `;
+const StyledSoundcloudH1 = styled(StyledH1)`
+  margin-top: 3rem;
+`;
 
 const Soundcloud = ({ data }) => {
 
@@ -78,7 +81,7 @@ const Soundcloud = ({ data }) => {
   
     return (
             <SkewedSection id="soundcloud" angle={10}>
-            <StyledH1>Listen</StyledH1>
+            <StyledSoundcloudH1>Listen</StyledSoundcloudH1>
             <StyledSoundcloudPlaylistsContainer>{soundcloud}</StyledSoundcloudPlaylistsContainer>
             <StyledSoundcloudLinkContainer>
                 <TextLink label="More" link={'https://google.com'} />
