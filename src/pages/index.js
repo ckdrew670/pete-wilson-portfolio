@@ -125,7 +125,7 @@ export const query = graphql`
               catalogue_number
               cover_image {
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
                     ...GatsbyImageSharpFluidLimitPresentationSize
                   }
