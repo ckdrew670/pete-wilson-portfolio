@@ -65,21 +65,21 @@ const Soundcloud = ({ data }) => {
     
 
     return (
-        <StyledSoundcloudPlaylistsContainer key={title}>
+        <StyledSoundcloudContainer key={title}>
           <StyledTitleLink to={url}>
             <StyledH2>{title}</StyledH2>
             <StyledIFrameContainer>
                 <iframe {...getAttrs(embed_code) } />
             </StyledIFrameContainer>
           </StyledTitleLink>
-        </StyledSoundcloudPlaylistsContainer>
+        </StyledSoundcloudContainer>
       );
     });
   
     return (
             <SkewedSection id="soundcloud" angle={10}>
             <StyledH1>Listen</StyledH1>
-            <StyledSoundcloudContainer>{soundcloud}</StyledSoundcloudContainer>
+            <StyledSoundcloudPlaylistsContainer>{soundcloud}</StyledSoundcloudPlaylistsContainer>
             <StyledSoundcloudLinkContainer>
                 <TextLink label="More" link={'https://google.com'} />
             </StyledSoundcloudLinkContainer>
