@@ -1,65 +1,94 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import TextLink from './links/text-link';
-import TagList from './tag-list';
 import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
-import { StyledImageContainer } from './_shared/styled-image-container';
 import { flexCenter } from './_shared/styled-mixins';
-import { StyledSection } from './_shared/styled-section';
-import { StyledTextSection } from './_shared/styled-text-section';
+import SkewedSection from './skewed-section';
+
+const StyledSoundcloudPlaylistsContainer = styled.article`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2.5rem;
+  margin-top: 2.5rem;
+
+  ${mq.gt.xs} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+const StyledSoundcloudContainer = styled.article`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+
+  & .gatsby-image-wrapper {
+    max-height: 400px;
+  }
+`;
+const StyledTitleLink = styled(Link)`
+  text-decoration: none;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  &:hover h2 {
+    color: var(--primary-color);
+  }
+`;
+const StyledSoundcloudLinkContainer = styled.div`
+  ${flexCenter};
+  width: 100%;
+  margin-top: 2.5rem;
+`;
+const StyledIFrameContainer = styled.div`
+`;
 
 const Soundcloud = ({ data }) => {
+
+    // get attributes from iframe element
+    const getAttrs = (iframeTag) => {
+        var doc = document.createElement('div');
+        doc.innerHTML = iframeTag;
+    
+        const iframe = doc.getElementsByTagName('iframe')[0];
+        return [].slice
+        .call(iframe.attributes)
+        .reduce((attrs, element) => {
+            attrs[element.name] = element.value;
+            return attrs;
+        }, {});
+    }
+    console.log(data);
     const soundcloud = data.map((item) => {
-      const { title, tags, description, date, url, publisher, catalogue_number } = item.node.frontmatter;
-      const coverImage = item.node.frontmatter.cover_image
-        ? item.node.frontmatter.cover_image.childImageSharp.fluid
-        : null;
-  
-      const link = url;
-  
-      const month = new Date(date).toLocaleDateString('en-EN', { month: 'short' });
-      const day = new Date(date).toLocaleDateString('en-EN', { day: '2-digit' });
-  
-      return (
-        <StyledAlbumContainer key={title}>
-          <StyledDateOverlay>
-            <span>{month}</span>
-            <span>{day}</span>
-          </StyledDateOverlay>
-          <Link to={link} aria-label={`recent album ${title}`}>
-            <StyledImageContainer>{coverImage && <Img fluid={coverImage} />}</StyledImageContainer>
-          </Link>
-          <StyledTitleLink to={link}>
+    const { title, embed_code, url } = item.frontmatter;
+    
+
+    return (
+        <StyledSoundcloudPlaylistsContainer key={title}>
+          <StyledTitleLink to={url}>
             <StyledH2>{title}</StyledH2>
+            <StyledIFrameContainer>
+                <iframe {...getAttrs(embed_code) } />
+            </StyledIFrameContainer>
           </StyledTitleLink>
-          <StyledAlbumText>
-            <p>{description}</p>
-          </StyledAlbumText>
-          <StyledAlbumDetailsList>
-              <p><span>Publisher:</span> {publisher} ({catalogue_number})</p>
-          </StyledAlbumDetailsList>
-          <TagList tags={tags} />
-        </StyledAlbumContainer>
+        </StyledSoundcloudPlaylistsContainer>
       );
     });
   
     return (
-      <StyledSection id="Soundcloud" angle={10}>
-        <StyledAlbumH1>Soundcloud</StyledAlbumH1>
-        <StyledSoundcloudContainer>{Soundcloud}</StyledSoundcloudContainer>
-        <StyledAlbumLinkContainer>
-          <TextLink label="View All Soundcloud" link="/Soundcloud" />
-        </StyledAlbumLinkContainer>
-      </StyledSection>
-    );
-  };
+            <SkewedSection id="soundcloud" angle={10}>
+            <StyledH1>Listen</StyledH1>
+            <StyledSoundcloudContainer>{soundcloud}</StyledSoundcloudContainer>
+            <StyledSoundcloudLinkContainer>
+                <TextLink label="More" link={'https://google.com'} />
+            </StyledSoundcloudLinkContainer>
+            </SkewedSection>
+        );
+};
   
-  Soundcloud.propTypes = {
+Soundcloud.propTypes = {
     data: PropTypes.array.isRequired,
-  };
-  
-  export default Soundcloud;
+}
+
+export default Soundcloud;

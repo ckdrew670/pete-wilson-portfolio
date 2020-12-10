@@ -8,6 +8,7 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import Albums from '../components/albums';
 import SEO from '../components/seo';
+import Soundcloud from '../components/soundcloud';
 import { indexMenuLinks } from '../components/_config/menu-links';
 
 const Index = ({ data }) => {
@@ -25,6 +26,8 @@ const Index = ({ data }) => {
       <SEO title="Home" />
       <Hero data={heroData} />
       <Albums data={data.albums.edges} />
+      { console.log(`index ${data.soundcloud.nodes}`) }
+      <Soundcloud data={data.soundcloud.nodes} />
       <About data={data.about} />
       <CardGrid cards={data.cards.nodes[0].frontmatter.cards} description={data.cards.nodes[0].html} title="Credits" id="credits" />
       
@@ -99,6 +102,7 @@ export const query = graphql`
         nodes {
           frontmatter {
             title
+            url
             embed_code
           }
         }
