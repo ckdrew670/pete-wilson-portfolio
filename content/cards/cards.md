@@ -10,6 +10,8 @@ cards:
     card_image: './bbcpanorama.png'
   - label: BBC One
     card_image: './bbc1.png'
+  - label: The One Show
+    card_image: './bbconeshow.png'
   - label: Channel 4
     card_image: './channel4.png'
 ---
