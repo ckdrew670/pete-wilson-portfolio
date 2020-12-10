@@ -22,7 +22,7 @@ const StyledTextSection = styled.section`
 
 const About = ({ data }) => {
   const {
-    frontmatter: { title, techs, about_image },
+    frontmatter: { title, about_image },
     html,
   } = data;
 
