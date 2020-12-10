@@ -18,6 +18,9 @@ const StyledFeatureGridContainer = styled.section`
   width: 100%;
 
   ${mq.gt.xs} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  ${mq.gt.sm} {
     grid-template-columns: repeat(3, 1fr);
   }
   ${mq.gt.md} {

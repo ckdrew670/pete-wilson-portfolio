@@ -21,7 +21,7 @@ const StyledAlbumsContainer = styled.article`
   grid-gap: 2.5rem;
   margin-top: 2.5rem;
 
-  ${mq.gt.xs} {
+  ${mq.gt.sm} {
     grid-template-columns: repeat(2, 1fr);
   }
 `;

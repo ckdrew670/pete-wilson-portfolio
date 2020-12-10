@@ -1,12 +1,22 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { mq } from './_shared/media';
 
 const skewNumber = 0.09719;
 const StyledSkewedSection = styled.section`
   margin: 4rem 0;
   position: relative;
-  padding: calc(100% * ${skewNumber}) 0;
+  padding: calc(100% * ${skewNumber}) 1rem;
+  
+  ${mq.gt.xs} {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  ${mq.gt.sm} {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 
   & > .content {
     max-width: 1000px;
