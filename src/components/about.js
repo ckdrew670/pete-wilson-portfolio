@@ -41,7 +41,6 @@ const About = ({ data }) => {
           </StyledStaticImageContainer>
         )}
         <div>
-          <StyledH2>{title}</StyledH2>
           <StyledTextSection dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </StyledAboutContainer>
