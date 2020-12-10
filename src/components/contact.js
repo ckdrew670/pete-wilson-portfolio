@@ -39,6 +39,9 @@ const StyledSeparator = styled.div`
   width: 50%;
   background-color: var(--body-color);
 `;
+const StyledContactH1 = styled(StyledH1)`
+  margin-top: 3rem;
+`;
 const StyledContacts = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -63,7 +66,7 @@ const Contact = ({ data }) => {
   return (
     <React.Fragment>
       <StyledContactSection id="contact">
-        <StyledH1>Contact Details</StyledH1>
+        <StyledContactH1>Contact Details</StyledContactH1>
         <StyledTextSection dangerouslySetInnerHTML={{ __html: html }} />
         <StyledSeparator />
         <StyledContacts>
