@@ -92,6 +92,18 @@ export const query = graphql`
       }
     }
 
+    soundcloud: allMarkdownRemark(
+        limit: 4
+        filter: { fileAbsolutePath: { regex: "/content/soundcloud/" } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            embed_code
+          }
+        }
+      }
+
     albums: allMarkdownRemark(
         sort: { order: DESC, fields: frontmatter___date }
         limit: 6

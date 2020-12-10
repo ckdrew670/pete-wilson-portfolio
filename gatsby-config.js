@@ -27,6 +27,13 @@ module.exports = {
         },
       },
     {
+    resolve: `gatsby-source-filesystem`,
+        options: {
+            name: `soundcloud`,
+            path: `${__dirname}/content/soundcloud`,
+        },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'hero',
