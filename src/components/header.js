@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import Logo from '../assets/logo.svg';
 import PropTypes from 'prop-types';
 import React from 'react';
 import SocialIcons from './social-icons';
@@ -27,6 +28,15 @@ const StyledContainer = styled.div`
   height: 100%;
   width: 100%;
   padding: 0 calc((var(--space) / 2));
+`;
+const StyledLogo = styled(Logo)`
+  fill: var(--title-color);
+  &:hover path.level-2 {
+    fill: var(--primary-color);
+  }
+  svg {
+      width: 1rem;
+  }
 `;
 const StyledNav = styled.nav`
   flex: 1;
@@ -68,10 +78,16 @@ const StyledNavLink = styled(Link)`
     right: 0;
   }
 `;
+const StyledHomeLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const Header = ({ menuLinks }) => (
   <StyledHeader>
     <StyledContainer>
+    <StyledHomeLink title="logo" to="/">
+        <StyledLogo />
+      </StyledHomeLink>
       <StyledNav>
         {menuLinks.map((link, index) => (
           <StyledNavLink key={link.name} to={link.link} activeClassName="active">
