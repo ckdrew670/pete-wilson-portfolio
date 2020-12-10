@@ -34,13 +34,8 @@ const StyledFeatureCard = styled.article`
   flex-direction: column;
   width: 100%;
 `;
-const StyledCardLabel = styled.h2`
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  color: var(--body-color);
-`;
 const StyledCardStaticImageContainer = styled(StyledStaticImageContainer)`
-  width: 10rem;
+  width: 80%;
 `;
 const StyledCreditsH1 = styled(StyledH1)`
   margin-top: 2rem;

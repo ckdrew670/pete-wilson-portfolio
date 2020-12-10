@@ -7,7 +7,7 @@ const skewNumber = 0.09719;
 const StyledSkewedSection = styled.section`
   margin: 4rem 0;
   position: relative;
-  padding: calc(100% * ${skewNumber}) 1rem;
+  padding: calc(100% * ${skewNumber}) 0;
   
   ${mq.gt.xs} {
     padding-left: 2rem;

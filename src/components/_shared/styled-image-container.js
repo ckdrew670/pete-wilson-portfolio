@@ -3,10 +3,6 @@ import { mq } from './media';
 
 export const StyledImageContainer = styled.div`
   width: 96%;
-
-  ${mq.gt.xs} {
-    width: 18rem;
-  }
   height: auto;
   position: relative;
 
@@ -21,10 +17,6 @@ export const StyledImageContainer = styled.div`
 
 export const StyledStaticImageContainer = styled.div`
   width: 96%;
-
-  ${mq.gt.xs} {
-    width: 18rem;
-  }
   height: auto;
   position: relative;
 
