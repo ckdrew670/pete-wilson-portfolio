@@ -9,7 +9,7 @@ cards:
   - label: BBC Panorama
     card_image: './bbcpanorama.png'
   - label: BBC One
-    card_image: './bbcone.png'
+    card_image: './bbc1.png'
   - label: Channel 4
     card_image: './channel4.png'
 ---
