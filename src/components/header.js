@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
   width: 100vw;
   z-index: 1000;
 
-  ${mq.gt.sm} {
+  ${mq.gt.xs} {
     position: fixed;
   }
 `;

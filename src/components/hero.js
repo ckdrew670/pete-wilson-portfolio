@@ -41,13 +41,17 @@ const StyledAuthor = styled.h1`
     font-size: 60px;
   }
 
+  ${mq.gt.sm} {
+    margin-top: -21rem;
+  }
+  
   ${mq.gt.md} {
     font-size: 80px;
   }
 `;
 const StyledTagline = styled.h2`
   margin-left: -4px !important;
-  max-width: 90%;
+  max-width: 80%;
   font-size: 40px;
   line-height: 1.1;
   margin: 0;
@@ -56,21 +60,17 @@ const StyledTagline = styled.h2`
 
   ${mq.gt.xs} {
     font-size: 60px;
-    max-width: 50%;
+    max-width: 60%;
   }
 
   ${mq.gt.md} {
     font-size: 80px;
+    max-width: 50%;
   }
-`;
-const StyledDescription = styled.div`
-  margin-top: 0.5rem;
-  width: 100%;
-  max-width: 500px;
 `;
 
 const Hero = ({ data }) => {
-  const { introduction, author, tagline, description, ctaLink, ctaLabel } = data;
+  const { author, tagline, ctaLink, ctaLabel } = data;
 
   return (
     <StyledHeroSection>
