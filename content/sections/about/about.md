@@ -1,8 +1,10 @@
 ---
 title: ''
-about_image: './pete.jpg'
+about_image: './me.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas sit amet arcu tincidunt fermentum. Mauris ac nisl nibh. Etiam nunc eros, blandit vel eros laoreet, accumsan lacinia turpis.
+Pete Wilson began his musical career as a Classical Clarinettist before moving into the worlds of Jazz and Pop. 
 
-Phasellus ut sagittis eros. Curabitur quis libero consequat, iaculis dolor sollicitudin, ultricies ligula. Donec sodales sed ex a fermentum. Quisque vitae efficitur odio, non aliquam sapien.
+After completing an Mmus at Goldsmiths, he took the plunge into media composition, writing music for woodwind ensemble, solo piano, contemporary jazz and hybrid trailer music.
+
+His work has been published by both major international and large independent record labels and has featured on BBC 1, BBC 2, BBC Radio 4, ITV and E4 amongst many other outlets. He composes from his studio in central Bristol.

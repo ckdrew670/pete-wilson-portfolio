@@ -62,7 +62,6 @@ const Soundcloud = ({ data }) => {
             return attrs;
         }, {});
     }
-    console.log(data);
     const soundcloud = data.map((item) => {
     const { title, embed_code, url } = item.frontmatter;
     

@@ -75,7 +75,7 @@ export const query = graphql`
     }
 
     cards: allMarkdownRemark(
-      limit: 10
+      limit: 20
       filter: { fileAbsolutePath: { regex: "/content/cards/" } }
     ) {
       nodes {
