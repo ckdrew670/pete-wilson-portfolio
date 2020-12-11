@@ -47,7 +47,7 @@ const StyledAuthor = styled.h1`
 `;
 const StyledTagline = styled.h2`
   margin-left: -4px !important;
-  max-width: 44vw;
+  max-width: 90%;
   font-size: 40px;
   line-height: 1.1;
   margin: 0;
@@ -56,6 +56,7 @@ const StyledTagline = styled.h2`
 
   ${mq.gt.xs} {
     font-size: 60px;
+    max-width: 50%;
   }
 
   ${mq.gt.md} {

@@ -23,6 +23,6 @@ cards:
   - label: Hollyoaks
     card_image: './hollyoaks.png'
   - label: BBC Two
-    card_image: './bbc2.png'
+    card_image: './bbctwo.png'
 ---
 

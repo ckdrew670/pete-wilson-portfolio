@@ -5,14 +5,14 @@ export const indexMenuLinks = [
     icon: 'terminal',
   },
   {
+    name: 'Soundcloud',
+    link: '/#soundcloud',
+    icon: 'feather-alt',
+  },
+  {
     name: 'About',
     link: '/#about',
     icon: 'user-tie',
-  },
-  {
-    name: 'Listen',
-    link: '/#soundcloud',
-    icon: 'feather-alt',
   },
   {
     name: 'Contact',
