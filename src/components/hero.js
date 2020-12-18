@@ -28,6 +28,8 @@ const StyledHeroSection = styled(StyledSection)`
     padding-left: 12rem;
     align-items: flex-start;
     text-align: left;
+  }
+  ${mq.gt.md} {
     background: url(/images/hero-background.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
