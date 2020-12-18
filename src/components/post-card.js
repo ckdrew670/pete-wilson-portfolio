@@ -20,6 +20,7 @@ const StyledListenLink = styled(Link)`
   align-items: flex-end;
   flex-grow: 1;
   padding: 0 var(--space) var(--space);
+  padding-bottom: 0;
   position: relative;
 
   &:hover {
@@ -55,7 +56,7 @@ const StyledPostCard = styled.article`
   flex-direction: column;
   position: relative;
   color: var(--title-color);
-  margin-bottom: var(--space);
+  margin-bottom: 1rem;
   padding: 0;
   min-width: 100%;
   padding-bottom: 1rem;

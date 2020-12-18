@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Pagination } from 'antd';
+import { mq } from '../components/_shared/media';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -13,7 +14,7 @@ import { StyledFullHeightSection } from '../components/_shared/styled-section';
 const StyledPaginationContainer = styled.div`
   ${flexCenter};
   width: 100%;
-  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 
   & ul.ant-pagination {
     cursor: pointer;
@@ -37,6 +38,19 @@ const StyledPaginationContainer = styled.div`
     }
   }
 `;
+
+const StyledAlbumsFullHeightSection = styled(StyledFullHeightSection)`
+  
+  ${mq.gt.md} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    article {
+        margin-top: 0 !important;
+        background-color: var(--bg-color) !important;
+    }
+  }
+`;
 const Albums = ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
 
@@ -51,7 +65,7 @@ const Albums = ({ data }) => {
   return (
     <Layout menuLinks={albumMenuLinks}>
       <SEO title="albums" />
-      <StyledFullHeightSection>
+      <StyledAlbumsFullHeightSection>
         {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return (
@@ -68,7 +82,8 @@ const Albums = ({ data }) => {
             />
           );
         })}
-        <StyledPaginationContainer>
+      </StyledAlbumsFullHeightSection>
+      <StyledPaginationContainer>
           <Pagination
             pageSize={paginationSize}
             current={currentPage}
@@ -76,7 +91,6 @@ const Albums = ({ data }) => {
             total={data.allMarkdownRemark.edges.length}
           />
         </StyledPaginationContainer>
-      </StyledFullHeightSection>
     </Layout>
   );
 };
