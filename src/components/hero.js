@@ -8,7 +8,7 @@ import { StyledSection } from './_shared/styled-section';
 const StyledHeroSection = styled(StyledSection)`
   min-height: calc(100vh -  var(--header-height));
   position: relative;
-  background: url(/images/hero-background.jpg) no-repeat center center fixed; 
+  background: url(/images/hero-background2.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,6 +28,11 @@ const StyledHeroSection = styled(StyledSection)`
     padding-left: 12rem;
     align-items: flex-start;
     text-align: left;
+    background: url(/images/hero-background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 `;
 const StyledAuthor = styled.h1`
