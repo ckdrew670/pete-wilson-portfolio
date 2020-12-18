@@ -16,18 +16,17 @@ const StyledHeroSection = styled(StyledSection)`
   margin: 0;
   max-width: 100%;
   width: 100%;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 2rem;
 
   ${mq.gt.xs} {
     min-height: 100vh;
-    text-align: center;
+    padding-left: auto;
   }
   ${mq.gt.sm} {
     min-height: 100vh;
-    padding-left: 12rem;
-    align-items: flex-start;
-    text-align: left;
+    padding-left: 10rem;
   }
   ${mq.gt.md} {
     background: url(/images/hero-background.jpg) no-repeat center center fixed; 
@@ -39,7 +38,8 @@ const StyledHeroSection = styled(StyledSection)`
 `;
 const StyledAuthor = styled.h1`
   margin-left: -4px !important;
-  font-size: 40px;
+  text-align: left;
+  font-size: 35px;
   line-height: 1.1;
   margin: 0;
   word-break: break-word;
@@ -59,7 +59,7 @@ const StyledAuthor = styled.h1`
 const StyledTagline = styled.h2`
   margin-left: -4px !important;
   max-width: 80%;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 1.1;
   margin: 0;
   color: var(--primary-color);
