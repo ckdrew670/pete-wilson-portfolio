@@ -96,7 +96,7 @@ export const query = graphql`
     }
 
     soundcloud: allMarkdownRemark(
-        limit: 4
+        limit: 20
         filter: { fileAbsolutePath: { regex: "/content/soundcloud/" } }
       ) {
         nodes {
@@ -110,7 +110,7 @@ export const query = graphql`
 
     albums: allMarkdownRemark(
         sort: { order: DESC, fields: frontmatter___date }
-        limit: 6
+        limit: 20
         filter: { fileAbsolutePath: { regex: "/content/albums/" } }
       ) {
         edges {

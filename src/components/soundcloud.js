@@ -83,7 +83,7 @@ const Soundcloud = ({ data }) => {
             <StyledSoundcloudH1>Listen</StyledSoundcloudH1>
             <StyledSoundcloudPlaylistsContainer>{soundcloud}</StyledSoundcloudPlaylistsContainer>
             <StyledSoundcloudLinkContainer>
-                <TextLink label="More" link={'https://google.com'} />
+                <TextLink label="More" link={'https://soundcloud.com/user-31083528'} />
             </StyledSoundcloudLinkContainer>
             </SkewedSection>
         );

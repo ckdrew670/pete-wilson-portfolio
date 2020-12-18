@@ -80,6 +80,8 @@ const StyledNavLink = styled(Link)`
 `;
 const StyledHomeLink = styled(Link)`
   text-decoration: none;
+  display: flex;
+  align-items: center;
 `;
 
 const Header = ({ menuLinks }) => (
