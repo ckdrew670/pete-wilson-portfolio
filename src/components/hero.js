@@ -6,7 +6,7 @@ import { mq } from './_shared/media';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledHeroSection = styled(StyledSection)`
-  min-height: calc(100vh -  var(--header-height));
+  min-height: 100vh;
   position: relative;
   background: url(/images/hero-background2.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -21,11 +21,9 @@ const StyledHeroSection = styled(StyledSection)`
   padding-left: 2rem;
 
   ${mq.gt.xs} {
-    min-height: 100vh;
     padding-left: auto;
   }
   ${mq.gt.sm} {
-    min-height: 100vh;
     padding-left: 10rem;
   }
   ${mq.gt.md} {
@@ -34,6 +32,7 @@ const StyledHeroSection = styled(StyledSection)`
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    min-height: 105vh;
   }
 `;
 const StyledAuthor = styled.h1`
@@ -50,6 +49,7 @@ const StyledAuthor = styled.h1`
 
   ${mq.gt.md} {
     font-size: 3.4rem;
+    margin-top: -10rem;
   }
 `;
 const StyledTagline = styled.h2`
@@ -69,6 +69,10 @@ const StyledTagline = styled.h2`
   ${mq.gt.md} {
     font-size: 3.4rem;
     max-width: 50%;
+  }
+  ${mq.gt.lg} {
+    font-size: 3.4rem;
+    max-width: 40%;
   }
 `;
 
