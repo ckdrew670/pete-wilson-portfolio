@@ -17,16 +17,16 @@ const StyledFooter = styled.footer`
   ${flexCenter};
   flex-direction: column;
   background-color: var(--bg-content-color);
-  padding: calc((var(--space) / 2));
+  padding: 4rem;
   text-align: center;
   font-size: 0.8rem;
+  padding-bottom: 7rem;
 
   ${mq.gt.xs} {
     flex-direction: row-reverse;
     justify-content: space-between;
-  }
-  ${mq.lt.md} {
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
+    padding: 2rem;
   }
 `;
 const StyledSocialContainer = styled.div`
@@ -45,7 +45,7 @@ const StyledSocialContainer = styled.div`
 `;
 const StyledCopyright = styled.span`
   font-weight: 500;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.6rem;
   ${mq.gt.xs} {
     margin-right: 0.8rem;
     margin-bottom: 0;
@@ -53,7 +53,7 @@ const StyledCopyright = styled.span`
 `;
 const StyledRotator = styled.div`
   ${flexCenter};
-  margin: 0.8rem 0;
+  margin: 1rem 0;
   font-size: 0.8rem;
 
   & > span {
@@ -72,7 +72,6 @@ const Footer = ({ author }) => {
         <StyledCopyright>
           © {new Date().getFullYear()} {author}
         </StyledCopyright>
-        <SocialIcons icons={socialIconList} />
       </StyledSocialContainer>
       <StyledRotator>
         <p style={{ marginBottom: 0 }}>Site built by Charlotte Drew using <Link to={`https://www.gatsbyjs.com/starters/Knochenmark/gatsby-starter-level-2`}>this Gatsby theme.</Link></p>
