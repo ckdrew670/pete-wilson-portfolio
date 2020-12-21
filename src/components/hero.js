@@ -14,7 +14,7 @@ const StyledHeroSection = styled(StyledSection)`
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: contain;
+  background-size: cover;
   margin: 0;
   max-width: 100%;
   width: 100%;
