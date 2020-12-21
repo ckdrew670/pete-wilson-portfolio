@@ -48,30 +48,17 @@ const StyledSoundcloudH1 = styled(StyledH1)`
 `;
 
 const Soundcloud = ({ data }) => {
-
-    // get attributes from iframe element
-    const getAttrs = (iframeTag) => {
-        var doc = document.createElement('div');
-        doc.innerHTML = iframeTag;
-    
-        const iframe = doc.getElementsByTagName('iframe')[0];
-        return [].slice
-        .call(iframe.attributes)
-        .reduce((attrs, element) => {
-            attrs[element.name] = element.value;
-            return attrs;
-        }, {});
-    }
+   
     const soundcloud = data.map((item) => {
-    const { title, embed_code, url } = item.frontmatter;
+    const { title, url } = item.frontmatter;
+    const html = item.html;
     
-
     return (
         <StyledSoundcloudContainer key={title}>
           <StyledTitleLink to={url}>
             <StyledH2>{title}</StyledH2>
             <StyledIFrameContainer>
-                <iframe {...getAttrs(embed_code) } />
+                <div dangerouslySetInnerHTML={{ __html: html }} />
             </StyledIFrameContainer>
           </StyledTitleLink>
         </StyledSoundcloudContainer>

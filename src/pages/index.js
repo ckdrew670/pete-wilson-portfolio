@@ -102,9 +102,8 @@ export const query = graphql`
         nodes {
           frontmatter {
             title
-            url
-            embed_code
           }
+          html
         }
       }
 
