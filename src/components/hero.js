@@ -45,15 +45,11 @@ const StyledAuthor = styled.h1`
   word-break: break-word;
 
   ${mq.gt.xs} {
-    font-size: 60px;
+    font-size: 2.8rem;
   }
 
-  ${mq.gt.sm} {
-    margin-top: -21rem;
-  }
-  
   ${mq.gt.md} {
-    font-size: 80px;
+    font-size: 3.4rem;
   }
 `;
 const StyledTagline = styled.h2`
@@ -66,12 +62,12 @@ const StyledTagline = styled.h2`
   word-break: break-word;
 
   ${mq.gt.xs} {
-    font-size: 60px;
+    font-size: 2.8rem;
     max-width: 60%;
   }
 
   ${mq.gt.md} {
-    font-size: 80px;
+    font-size: 3.4rem;
     max-width: 50%;
   }
 `;
