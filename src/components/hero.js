@@ -11,23 +11,20 @@ const StyledHeroSection = styled(StyledSection)`
   margin: 0;
   width: 100% !important;
   max-width: 100% !important;
+  height: 100vh;
 `;
 
 const StyledBgImage = styled(Img)`
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
-  height: ${({height}) => height};
   z-index: -1;
+  height: 100% !important;
 
   & > img {
       object-fit: cover !important;
       object-position: 0% 0% !important;
-  }
-
-  @media screen and (max-width: 600px) {
-    height: ${({ mobileHeight }) => mobileHeight};
   }
 `;
 
@@ -74,10 +71,19 @@ const StyledTagline = styled.h2`
 
 const Hero = ({ data }) => {
   const { author, tagline, ctaLink, ctaLabel, imageMobile, imageDesktop } = data;
+  const sources = [
+    imageMobile.childImageSharp.fluid,
+    {
+        ...imageDesktop.childImageSharp.fluid,
+        media: `${mq.gt.sm}`,
+    },
+  ];
 
   return (
     <StyledHeroSection>
-        <StyledBgImage fluid={imageDesktop.childImageSharp.fluid} objectFit="cover"/>
+        {console.log(imageMobile)}
+        <StyledBgImage fluid={
+            sources }/>
         <StyledHeroContent>
             <StyledAuthor>{author}</StyledAuthor>
             <StyledTagline>{tagline}</StyledTagline>
