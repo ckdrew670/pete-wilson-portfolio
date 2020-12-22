@@ -31,7 +31,21 @@ const StyledBgImage = styled(Img)`
 const StyledHeroContent = styled.div`
   position: absolute;
   top: 16rem;
-  left: 12rem;
+  left: 0;
+  padding-left: 1rem;
+
+  ${mq.gt.xs} {  
+    top: 14rem;
+    padding-left: 4rem;
+  }
+  ${mq.gt.sm} {  
+    top: 16rem;
+    padding-left: 6rem;
+  }
+  ${mq.gt.md} {  
+    top: 16rem;
+    padding-left: 10rem;
+  }
 `;
 
 const StyledAuthor = styled.h1`
@@ -42,6 +56,10 @@ const StyledAuthor = styled.h1`
   word-break: break-word;
 
   ${mq.gt.xs} {
+    font-size: 2.4rem;
+  }
+
+  ${mq.gt.sm} {
     font-size: 2.8rem;
   }
 
@@ -55,14 +73,18 @@ const StyledTagline = styled.h2`
   margin: 0;
   color: var(--primary-color);
   word-break: break-word;
+  max-width: 70%;
 
   ${mq.gt.xs} {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     max-width: 60%;
   }
-
+  ${mq.gt.sm} {
+    font-size: 2.8rem;
+  }
   ${mq.gt.md} {
     font-size: 3.4rem;
+    max-width: 70%;
   }
   ${mq.gt.lg} {
     font-size: 3.4rem;

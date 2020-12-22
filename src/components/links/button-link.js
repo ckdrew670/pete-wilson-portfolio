@@ -2,13 +2,14 @@ import styled from '@emotion/styled';
 import React from 'react';
 import Icon from '../icon';
 import { flexCenter } from './../_shared/styled-mixins';
+import { mq } from './../_shared/media';
 
 export const StyledButtonLink = styled.a`
   ${flexCenter};
   text-decoration: none;
   color: var(--bg-content-color) !important;
   background-color: var(--title-color);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
   position: relative;
@@ -18,7 +19,11 @@ export const StyledButtonLink = styled.a`
   margin: 0.4rem 0;
   z-index: 100;
   width: 8rem;
-  max-width: 8rem;
+  max-width: 6rem;
+
+  ${mq.gt.xs} {
+      max-width: 8rem;
+  }
 
   &:hover {
     color: var(--primary-color) !important;
