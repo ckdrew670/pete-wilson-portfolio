@@ -26,7 +26,6 @@ const Index = ({ data }) => {
       <SEO title="Home" />
       <Hero data={heroData} />
       <Albums data={data.albums.edges} />
-      { console.log(`index ${data.soundcloud.nodes}`) }
       <Soundcloud data={data.soundcloud.nodes} />
       <About data={data.about} />
       <CardGrid cards={data.cards.nodes[0].frontmatter.cards} description={data.cards.nodes[0].html} title="Credits" id="credits" />

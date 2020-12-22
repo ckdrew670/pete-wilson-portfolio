@@ -71,17 +71,18 @@ const StyledTagline = styled.h2`
 
 const Hero = ({ data }) => {
   const { author, tagline, ctaLink, ctaLabel, imageMobile, imageDesktop } = data;
+
+  // the following allows for art direction
   const sources = [
     imageMobile.childImageSharp.fluid,
     {
         ...imageDesktop.childImageSharp.fluid,
-        media: `${mq.gt.sm}`,
+        media: `(min-width: 1279px)`,
     },
   ];
 
   return (
     <StyledHeroSection>
-        {console.log(imageMobile)}
         <StyledBgImage fluid={
             sources }/>
         <StyledHeroContent>

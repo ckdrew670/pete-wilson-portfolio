@@ -17,7 +17,8 @@ export const StyledButtonLink = styled.a`
   padding: 0.6rem 1rem;
   margin: 0.4rem 0;
   z-index: 100;
-  max-width: 6rem;
+  width: 8rem;
+  max-width: 8rem;
 
   &:hover {
     color: var(--primary-color) !important;
@@ -29,14 +30,14 @@ export const StyledButtonLink = styled.a`
   & > svg {
     fill: var(--bg-content-color);
     height: 0.8rem;
-    margin-left: 0.4rem;
+    margin-left: 0.6rem;
     transition: all ease var(--transition-fast);
   }
 
   &:hover > svg {
     fill: var(--primary-color);
-    margin-left: 3rem;
     transition: margin-left ease var(--transition-fast);
+    margin-left: 1rem;
   }
 `;
 
