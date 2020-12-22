@@ -17,23 +17,18 @@ const StyledFooter = styled.footer`
   ${flexCenter};
   flex-direction: column;
   background-color: var(--bg-content-color);
-  padding-top: 0;
-  padding-bottom: 5rem;
+  padding: 4rem;
   text-align: center;
   font-size: 0.8rem;
+  padding-bottom: 7rem;
 
   ${mq.gt.xs} {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-bottom: 2rem;
     padding: 2rem;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-
-  ${mq.gt.sm} {
-    flex-direction: row-reverse;
-    justify-content: space-between;
   }
 `;
-
 const StyledSocialContainer = styled.div`
   ${flexCenter};
   flex-direction: column;
@@ -41,16 +36,16 @@ const StyledSocialContainer = styled.div`
   ${marginMediaQuery};
 
   ${mq.gt.xs} {
-      margin-bottom: 3rem;
     > div {
       margin-right: 0.5rem;
     }
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
   }
 `;
 const StyledCopyright = styled.span`
   font-weight: 500;
+  margin-bottom: 1.6rem;
   ${mq.gt.xs} {
     margin-right: 0.8rem;
     margin-bottom: 0;
@@ -58,8 +53,8 @@ const StyledCopyright = styled.span`
 `;
 const StyledRotator = styled.div`
   ${flexCenter};
-  margin: 0;
-  font-size: 0.6rem;
+  margin: 1rem 0;
+  font-size: 0.8rem;
 
   & > span {
     margin-left: 0.25rem;
@@ -67,10 +62,6 @@ const StyledRotator = styled.div`
 
   ${mq.gt.xs} {
     margin: 0;
-    margin-bottom: 3rem;
-  }
-  ${mq.gt.sm} {
-    font-size: 0.8rem;
   }
 `;
 
@@ -81,7 +72,6 @@ const Footer = ({ author }) => {
         <StyledCopyright>
           © {new Date().getFullYear()} {author}
         </StyledCopyright>
-        <SocialIcons icons={socialIconList} />
       </StyledSocialContainer>
       <StyledRotator>
         <p style={{ marginBottom: 0 }}>Site built by Charlotte Drew using <Link to={`https://www.gatsbyjs.com/starters/Knochenmark/gatsby-starter-level-2`}>this Gatsby theme.</Link></p>
