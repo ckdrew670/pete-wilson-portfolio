@@ -105,8 +105,7 @@ const Hero = ({ data }) => {
 
   return (
     <StyledHeroSection>
-        <StyledBgImage fluid={
-            sources }/>
+        <StyledBgImage fluid={sources} alt="Pete Wilson"/>
         <StyledHeroContent>
             <StyledAuthor>{author}</StyledAuthor>
             <StyledTagline>{tagline}</StyledTagline>

@@ -112,7 +112,7 @@ const Albums = ({ data }) => {
           <span>{day}</span>
         </StyledDateOverlay>
         <Link to={link} aria-label={`recent album ${title}`}>
-          <StyledImageContainer>{coverImage && <Img fluid={coverImage} />}</StyledImageContainer>
+          <StyledImageContainer>{coverImage && <Img fluid={coverImage} alt={title}/>}</StyledImageContainer>
         </Link>
         <StyledTitleLink to={link}>
           <StyledH2>{title}</StyledH2>

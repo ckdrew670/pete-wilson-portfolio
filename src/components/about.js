@@ -37,7 +37,7 @@ const About = ({ data }) => {
       <StyledAboutContainer>
         {image && (
           <StyledStaticImageContainer>
-            <Img fluid={image} objectFit="contain" />
+            <Img fluid={image} objectFit="contain" alt="Pete Wilson" />
           </StyledStaticImageContainer>
         )}
         <div>

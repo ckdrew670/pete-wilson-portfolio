@@ -49,7 +49,7 @@ const CardGrid = ({ cards, description, title, id = null }) => {
     return (
       <StyledFeatureCard key={index}>
         <StyledCardStaticImageContainer>
-          <Img fluid={image} objectFit="contain" />
+          <Img fluid={image} objectFit="contain" alt={label} />
         </StyledCardStaticImageContainer>
       </StyledFeatureCard>
     );

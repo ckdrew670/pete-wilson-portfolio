@@ -5,7 +5,7 @@ module.exports = {
     titleTemplate: '%s · Pete Wilson',
     image: '',
     author: 'Pete Wilson',
-    description: 'A portfolio site for the composer for film and media.',
+    description: 'Pete Wilson is a composer for film and media based in Bristol, UK.',
     url: '',
     paginationPageSize: 6, // Amount of posts displayed per listing page.
   },
