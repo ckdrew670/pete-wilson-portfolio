@@ -4,39 +4,13 @@ import React from 'react';
 import ButtonLink from './links/button-link';
 import { mq } from './_shared/media';
 import { StyledSection } from './_shared/styled-section';
-import heroDesktop from '../images/hero-background.jpg';
-import heroMobile from '../images/hero-background2.jpg';
 import Img from 'gatsby-image';
 
 const StyledHeroSection = styled(StyledSection)`
-  min-height: 100vh;
-  position: relative;
-  background: url(${ heroMobile }) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding: 0 !important;
   margin: 0;
-  max-width: 100%;
-  width: 100%;
-  align-items: flex-start;
-  text-align: left;
-  padding-left: 2rem;
-
-  ${mq.gt.xs} {
-    padding-left: auto;
-  }
-  ${mq.gt.sm} {
-    padding-left: 10rem;
-  }
-  ${mq.gt.md} {
-    background: url(${ heroDesktop }) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 105vh;
-  }
+  width: 100% !important;
+  max-width: 100% !important;
 `;
 
 const StyledBgImage = styled(Img)`
@@ -99,11 +73,11 @@ const StyledTagline = styled.h2`
 `;
 
 const Hero = ({ data }) => {
-  const { author, tagline, ctaLink, ctaLabel } = data;
+  const { author, tagline, ctaLink, ctaLabel, imageMobile, imageDesktop } = data;
 
   return (
     <StyledHeroSection>
-        <StyledBgImage fluid={image} height={height} mobileHeight={mobileHeight} objectFit="cover"/>
+        <StyledBgImage fluid={imageDesktop.childImageSharp.fluid} objectFit="cover"/>
         <StyledHeroContent>
             <StyledAuthor>{author}</StyledAuthor>
             <StyledTagline>{tagline}</StyledTagline>

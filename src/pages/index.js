@@ -15,10 +15,10 @@ const Index = ({ data }) => {
   const heroData = {
     author: data.site.siteMetadata.author,
     tagline: data.hero.frontmatter.tagline,
-    description: data.hero.html,
-    introduction: data.hero.frontmatter.introduction,
     ctaLabel: data.hero.frontmatter.cta_label,
     ctaLink: data.hero.frontmatter.cta_link,
+    imageDesktop: data.hero.frontmatter.imageDesktop,
+    imageMobile: data.hero.frontmatter.imageMobile
   };
 
   return (
@@ -56,6 +56,20 @@ export const query = graphql`
         tagline
         cta_label
         cta_link
+        imageMobile {
+          childImageSharp {
+            fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        imageDesktop {
+        childImageSharp {
+            fluid(maxWidth: 2000, quality: 100) {
+            ...GatsbyImageSharpFluid
+            }
+        }
+        }
       }
       html
     }
