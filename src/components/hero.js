@@ -6,6 +6,7 @@ import { mq } from './_shared/media';
 import { StyledSection } from './_shared/styled-section';
 import heroDesktop from '../images/hero-background.jpg';
 import heroMobile from '../images/hero-background2.jpg';
+import Img from 'gatsby-image';
 
 const StyledHeroSection = styled(StyledSection)`
   min-height: 100vh;
@@ -37,8 +38,32 @@ const StyledHeroSection = styled(StyledSection)`
     min-height: 105vh;
   }
 `;
+
+const StyledBgImage = styled(Img)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: ${({height}) => height};
+  z-index: -1;
+
+  & > img {
+      object-fit: cover !important;
+      object-position: 0% 0% !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: ${({ mobileHeight }) => mobileHeight};
+  }
+`;
+
+const StyledHeroContent = styled.div`
+  position: absolute;
+  top: 16rem;
+  left: 12rem;
+`;
+
 const StyledAuthor = styled.h1`
-  margin-left: -4px !important;
   text-align: left;
   font-size: 35px;
   line-height: 1.1;
@@ -51,12 +76,9 @@ const StyledAuthor = styled.h1`
 
   ${mq.gt.md} {
     font-size: 3.4rem;
-    margin-top: -10rem;
   }
 `;
 const StyledTagline = styled.h2`
-  margin-left: -4px !important;
-  max-width: 80%;
   font-size: 35px;
   line-height: 1.1;
   margin: 0;
@@ -70,11 +92,9 @@ const StyledTagline = styled.h2`
 
   ${mq.gt.md} {
     font-size: 3.4rem;
-    max-width: 50%;
   }
   ${mq.gt.lg} {
     font-size: 3.4rem;
-    max-width: 40%;
   }
 `;
 
@@ -83,9 +103,12 @@ const Hero = ({ data }) => {
 
   return (
     <StyledHeroSection>
-      <StyledAuthor>{author}</StyledAuthor>
-      <StyledTagline>{tagline}</StyledTagline>
-      <ButtonLink label={ctaLabel} link={ctaLink} />
+        <StyledBgImage fluid={image} height={height} mobileHeight={mobileHeight} objectFit="cover"/>
+        <StyledHeroContent>
+            <StyledAuthor>{author}</StyledAuthor>
+            <StyledTagline>{tagline}</StyledTagline>
+            <ButtonLink label={ctaLabel} link={ctaLink}/>
+        </StyledHeroContent>
     </StyledHeroSection>
   );
 };

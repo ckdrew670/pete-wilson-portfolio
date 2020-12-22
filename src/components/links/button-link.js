@@ -17,6 +17,7 @@ export const StyledButtonLink = styled.a`
   padding: 0.6rem 1rem;
   margin: 0.4rem 0;
   z-index: 100;
+  max-width: 6rem;
 
   &:hover {
     color: var(--primary-color) !important;
