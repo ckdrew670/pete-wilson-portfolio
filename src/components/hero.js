@@ -30,7 +30,7 @@ const StyledBgImage = styled(Img)`
 
 const StyledHeroContent = styled.div`
   position: absolute;
-  top: 16rem;
+  top: 9rem;
   left: 0;
   padding-left: 1rem;
 

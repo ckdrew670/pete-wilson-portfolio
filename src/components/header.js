@@ -9,16 +9,18 @@ import { mq } from './_shared/media';
 import { StyledIndexNumber } from './_shared/styled-index-number';
 
 const StyledHeader = styled.header`
-  height: var(--header-height);
-  flex-shrink: 0;
-  background-color: var(--bg-content-color);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-left);
-  width: 100vw;
-  z-index: 1000;
+  display: none;
 
-  ${mq.gt.xs} {
+  ${mq.gt.sm} {
+    display: flex;
     position: fixed;
+    height: var(--header-height);
+    flex-shrink: 0;
+    background-color: var(--bg-content-color);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-left);
+    width: 100vw;
+    z-index: 1000;
   }
 `;
 const StyledContainer = styled.div`
